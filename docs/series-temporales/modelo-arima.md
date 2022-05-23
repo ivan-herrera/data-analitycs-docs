@@ -213,6 +213,7 @@ Total fit time: 20.395 seconds
 Una vez con el modelo, podremos predecir con el conjunto de datos que separamos para la prueba llamado `train`.
 
 ```py
+# highlight-next-line
 p = pd.DataFrame(modelo.predict(n_periods=20),index=test.index)
 p.columns=['prediccion']
 p.head(4)
