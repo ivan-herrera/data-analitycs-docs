@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Data Sciences',
   tagline: 'Algorithms, strategies, and applications',
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://machine-learning-ivan-herrera.netlify.app',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
