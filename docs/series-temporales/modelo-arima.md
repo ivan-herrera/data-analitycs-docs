@@ -115,7 +115,7 @@ ventas.plot()
 
 ![Grafica de Serie Temporal de Champagne](./img/grafica-datos-original.png)
 
-El siguiente paso permitira dividir el conjunto de datos de tal manera que alrededor del 80% de los datos sea destinado a entrenar y el 20% restante sea para a probar el modelo.
+En el siguiente paso se procede a dividir el conjunto de datos de tal manera que alrededor del 80% de los datos sea destinado a entrenar y el 20% restante sea para probar el modelo.
 
 ```python
 train = ventas[:85] # 85 datos para entrenamiento
@@ -128,11 +128,11 @@ train.plot()
 Nota que la grafica ahora esta excluyendo el año 1972 que corresponde al ultimo año registrado en el conjunto de datos.
 :::
 
-#### Entrenamiento
+#### Conjunto de datos para el Entrenamiento
 
 ![Grafica de datos para entrenamiento](./img/grafica-datos-entrenamiento.png)
 
-#### Pruebas
+#### Conjunto de datos para las Pruebas
 ![Grafica de datos para pruebas](./img/grafica-datos-pruebas.png)
 
 ```python
@@ -142,6 +142,8 @@ plt.plot(test)
 
 ![Grafica de datos de train y test](./img/grafica-datos-train-test.png)
 
+La sección color naranja es excluida del dataset de entrenamiento para verificar la veracidad de la predicción que arroje el modelo más adelante en este tutorial.
+
 ### Entrenamiento del modelo ARIMA
 
 El primer paso para entrenar nuestro modelo de predicciones es importar la libreria `pmdarima`.
@@ -150,7 +152,15 @@ El primer paso para entrenar nuestro modelo de predicciones es importar la libre
 from pmdarima.arima import auto_arima
 ```
 
-La libreria pmdarima trae consigo la función que te permitira configurar los parametros que necesitara el metodo `auto_arima` para entrenar el modelo.
+La libreria pmdarima trae consigo la función que te permitira configurar los parametros que necesitara el metodo `auto_arima` para entrenar el modelo. Conoce todos los dellates sobre de cada uno de los parametros visitando la [documentación oficial de Pmdarima](https://alkaline-ml.com/pmdarima/modules/generated/pmdarima.arima.ARIMA.html).
+
+
+Al ejecutar el siguiente codigo realizara una búsqueda por pasos para minimizar el aic.
+
+:::info
+### AIC (Akaike information criteria)
+El criterio de información de Akaike es una medida de la calidad relativa de un modelo estadístico, para un conjunto dado de datos. Este valor de calidad le permite a auto_arima encontrar el modelo que mejor se ajusta a nuestro conjunto de datos.
+:::
 
 ```py
 modelo = auto_arima(train, start_p=0, start_q=0, max_p=10, max_d=10,
@@ -192,11 +202,12 @@ Total fit time: 20.395 seconds
 ```
 
 :::tip
-Correctamente `auto_rima` encuentra el mejor modelo para predecir de acuerdo a nuestro conjunto de datos.
+Correctamente `auto_rima` encuentra el mejor modelo para predecir de acuerdo a nuestro conjunto de datos. 
 ```
 Best model:  ARIMA(1,1,2)(0,1,0)[12]          
 Total fit time: 20.395 seconds
 ```
+`ARIMA(1,1,2)(0,1,0)[12]` es el mejor modelo debido a que su `AIC=1174.564` es el menor de todos los resultados. 
 :::
 
 Una vez con el modelo, podremos predecir con el conjunto de datos que separamos para la prueba llamado `train`.
@@ -242,11 +253,11 @@ plt.show()
 ```
 !["Grafica comparativa entre datos historicos y la predicción del modelo arima"](./img/grafica-datos-prediccion.png)
 
-La grafica provee información valiosa que nos permite determinar si el modelo funciona o no correctamente. Ten encuenta que los datos de prueba no hicieron del entrenamiento, por lo que, los datos de prueba son desconocidos por parte del entrenamiento. De este modo, se observa que los resultados de la predicción se asemejan al comportamiento de los datos de prueba, pues reflejan un aumento en las ventas de Champaña del mes de diciembre del año predicho. 
+La grafica provee información valiosa que nos permite determinar si el modelo funciona correctamente. Hay que tener encuenta que los datos de prueba no hicieron del entrenamiento, por lo que son desconocidos por parte del entrenamiento. De este modo, se observa que los resultados de la predicción se asemejan al comportamiento de los datos de prueba, pues reflejan un aumento en las ventas de Champaña del mes de diciembre del año predicho. 
 
 :::caution
 
-Ten encuenta que en las series temporales, entre menor sea el numero de periodos, mas efectiva va a ser la prediccion. Observe el resultado de la predicción cuando se hace uso el un numero de periodos muy alto en el metodo `predict()`.
+Ten encuenta que en las series temporales, entre menor sea el numero de periodos, mas efectiva será la predicción. Observe el resultado de la predicción cuando se hace uso de un número de periodos muy alto en el metodo `predict()` del modelo arima.
 
 ```py
 pd.DataFrame(modelo.predict(n_periods=280)).plot()
