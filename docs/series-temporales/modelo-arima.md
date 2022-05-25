@@ -6,17 +6,17 @@ sidebar_position: 2
 
 Una ARIMA, o media móvil integrada autorregresiva, es una generalización de una media móvil autorregresiva (ARMA) y se ajusta a los datos de series temporales en un esfuerzo por pronosticar puntos futuros. Los modelos ARIMA pueden ser especialmente eficaces en los casos en que los datos muestran evidencia de no estacionariedad.
 
-### Instalación
+## Instalación
 
-Ejecupa el siguiente comando en la consola para instalar la libreria `Pmdarima`
+Ejecutar el siguiente comando en la consola para instalar la libreria `Pmdarima`
 
 ```python
 pip install pmdarima
 ```
 
-### Carga de los datos
+## Carga de los datos
 
-Una vez instalada, se debe importar `Pandas` y cargar los datos con los que se entrenara el modelo. 
+Una vez instalada, se debe importar `Pandas` y cargar los datos con los que se entrenara el modelo. Para este ejemplo, el conjunto de datos que estaremos utilizando almacena el historico de ventas de champaña que se registradas entre los años 1964 y 1972.
 
 ```python title="Carga de los datos"
 import pandas as pd
@@ -54,7 +54,7 @@ Salida:
     </tr>
 </table>
 
-### Transformación
+## Transformación
 
 Al momento de trabajar con series temporales, debemos asegurarnos de que el conjunto de datos posea al menos una columna tiempo y a su vez, esta sea de tipo `date` o `time`. Para ello, a continuación verificamos el tipo de dato de la columna temporal.
 
@@ -106,7 +106,7 @@ Salida:
     </tr>
 </table>
 
-### Graficación de los datos
+## Graficación de los datos
 
 ```python
 import matplotlib.pyplot as plt
@@ -128,11 +128,11 @@ train.plot()
 Nota que la grafica ahora esta excluyendo el año 1972 que corresponde al ultimo año registrado en el conjunto de datos.
 :::
 
-#### Conjunto de datos para el Entrenamiento
+### Conjunto de datos para el Entrenamiento
 
 ![Grafica de datos para entrenamiento](./img/grafica-datos-entrenamiento.png)
 
-#### Conjunto de datos para las Pruebas
+### Conjunto de datos para las Pruebas
 ![Grafica de datos para pruebas](./img/grafica-datos-pruebas.png)
 
 ```python
@@ -144,7 +144,7 @@ plt.plot(test)
 
 La sección color naranja es excluida del dataset de entrenamiento para verificar la veracidad de la predicción que arroje el modelo más adelante en este tutorial.
 
-### Entrenamiento del modelo ARIMA
+## Entrenamiento del modelo ARIMA
 
 El primer paso para entrenar nuestro modelo de predicciones es importar la libreria `pmdarima`.
 
