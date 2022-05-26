@@ -192,20 +192,27 @@ ax.legend();
 
 ![Grafica comparativa de train-test-predict](../series-temporales/img/Autoregresivo%20Recursivo/grafica-prediccion.png)
 
-Como se logra observar en la gráfica, el resultado de la predicción no se asemeja demasiado a los datos de prueba. Por lo tanto,  se procede a cuantificar el error que comete el modelo en sus predicciones con la métrica _mean squeared (mse)_.
+Como se logra observar en la gráfica, el resultado de la predicción no se asemeja demasiado a los datos de prueba. Hasta este punto, es bueno conocer el error que esta arrojando el modelo.
 
 :::caution
+
+Se procede a cuantificar el error que comete el modelo en sus predicciones con la métrica _mean squeared (mse)_.
+
+```python
 error_mse = mean_squared_error(
                 y_true = datos_test['y'],
                 y_pred = predicciones
             )
 
 print(f"Error de test (mse): {error_mse}")
-:::
-
+```
+Como se observa a continuación, el resultado de la métrica `mse` no muy alto, sin embargo, se puede lograr un error mucho mas bajo, lo cual garantizaria un nivel de confianza mucho mayor a las predicciones.
 ```bash title="Error Mean Squared Errror"
 Error de test (mse): 0.07326833976120374
 ```
+:::
+
+
 
 ### Ajuste de hiperparámetros (tuning)
 
