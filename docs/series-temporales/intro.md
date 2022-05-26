@@ -4,17 +4,17 @@ sidebar_position: 1
 
 # Introducción
 
-Los conjuntos de datos que normalmente se exploran en el aprendizaje automático, el tiempo juega un papel importante. Las predicciones son el descubrimiento de hechos que anuncian el futuro, es decir, las predicciones se realizan para encontrar nuevos datos que describan el comportamiento futuro que podria tomar cierta variable de estudio.
+Los conjuntos de datos que normalmente se exploran en el aprendizaje automático, el tiempo juega un papel importante. Las predicciones son el descubrimiento de hechos que anuncian el futuro, es decir, las predicciones se realizan para encontrar nuevos datos que describan el comportamiento futuro que podría tomar cierta variable de estudio.
 
 ## ¿Qué es una Serie de Tiempo?
 
-Una serie de teimpo o también conocida serie temporal es una secuencia de observaciones tomadas secuencialmente en el tiempo.
+Una serie de tiempo o también conocida serie temporal es una secuencia de observaciones tomadas secuencialmente en el tiempo.
 
 ![Representación de una serie de tiempo](./img/serie%20de%20tiempo.jpeg)
 
 ## ¿Por qué hablar de Prediccion de Series Temporales?
 
-La prediccion de series temporales es un area muy importante del Machine Learning del que no se habla mucho. En la actualidad, existe una gran cantidad de problemas que involucran el componente tiempo. Sin embargo, es un tema al que no se le da la relevancia correspondiente porque el componente tiempo hace que los problemas sean dificiles de manejar.
+La predicción de series temporales es un área muy importante del Machine Learning del que no se habla mucho. En la actualidad, existe una gran cantidad de problemas que involucran el componente tiempo. Sin embargo, es un tema al que no se le da la relevancia correspondiente porque el componente tiempo hace que los problemas sean difíciles de manejar.
 
 Un conjunto de datos común en el Machine Learning representa una colección de observaciones.
 
@@ -68,7 +68,7 @@ Por ejemplo: *Observaciones de series temporales*
 
 ## Ejemplos de Predicciónes de Series Temporales
 
-La aplicación de previsión de series temporales son casi infinitos. Existen muchos problemas que pueden ser solucionados con la ayuda de este tema. A continuación, se muestran 10 ejemplos de diferentes disciplinas para que los términos análisis y predicción de series temporales sean más específicos.
+La aplicación de previsión de series temporales es casi infinita. Existen muchos problemas que pueden ser solucionados con la ayuda de este tema. A continuación, se muestran 10 ejemplos de diferentes disciplinas para que los términos análisis y predicción de series temporales sean más específicos.
 
 - Previsión de la producción de maíz en toneladas por estado cada año.
 - Predicción de si un trazado de electroencefalograma en segundos indica que un paciente está sufriendo un ataque o no.
@@ -86,6 +86,6 @@ La aplicación de previsión de series temporales son casi infinitos. Existen mu
 El análisis de series temporales ofrece un conjunto de técnicas para comprender mejor un conjunto de datos. Podemos dividir una serie temporal para que se constituya en 4 partes: 
 
 - **Nivel.** El valor de referencia de la serie si fuera una línea recta.
-- **Tendencia.** El comportamiento comunmente lineal creciente o decreciente de la serie a lo largo del tiempo.
+- **Tendencia.** El comportamiento comúnmente lineal creciente o decreciente de la serie a lo largo del tiempo.
 - **Estacionalidad.** La repetición opcional de ciclos de comportamiento a lo largo del tiempo.
 - **Ruido.** La variabilidad en las observaciones que no puede ser explicada por el modelo.
