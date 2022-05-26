@@ -16,7 +16,7 @@ pip install pmdarima
 
 ## Carga de los datos
 
-Una vez instalada, se debe importar `Pandas` y cargar los datos con los que se entrenara el modelo. Para este ejemplo, el conjunto de datos que estaremos utilizando almacena el historico de ventas de champaña que se registradas entre los años 1964 y 1972.
+Una vez instalada, se debe importar `Pandas` y cargar los datos con los que se entrenara el modelo. Para este ejemplo, el conjunto de datos que estaremos utilizando almacena el histórico de ventas de champaña que se registradas entre los años 1964 y 1972.
 
 ```python title="Carga de los datos"
 import pandas as pd
@@ -56,7 +56,7 @@ Salida:
 
 ## Transformación
 
-Al momento de trabajar con series temporales, debemos asegurarnos de que el conjunto de datos posea al menos una columna tiempo y a su vez, esta sea de tipo `date` o `time`. Para ello, a continuación verificamos el tipo de dato de la columna temporal.
+Al momento de trabajar con series temporales, debemos asegurarnos de que el conjunto de datos posea al menos una columna tiempo y a su vez, esta sea de tipo `date` o `time`. Para ello, a continuación, verificamos el tipo de dato de la columna temporal.
 
 ```python
 ventas.dtypes
@@ -68,13 +68,13 @@ Champagne sales     int64
 dtype: object
 ```
 
-Observe que `Month` es de tipo `Object`. Esto generara problemas al momento de entrenar nuestro modelo, por lo tanto, se debe realizar la conversion a tipo `date`
+Observe que `Month` es de tipo `Object`. Esto generara problemas al momento de entrenar nuestro modelo, por lo tanto, se debe realizar la conversión a tipo `date`.
 
 ```python
 ventas['Month'] = pd.to_datetime(ventas['Month'])
 ```
 
-Tambien, es importante establecer la variable tiempo como el indice de nuestros datos debido a que el `eje x` de la serie temporal siempre debe ser la variable tiempo.
+También, es importante establecer la variable tiempo como el índice de nuestros datos debido a que el `eje x` de la serie temporal siempre debe ser la variable tiempo.
 
 ```python
 ventas.set_index('Month',inplace=True)
@@ -125,7 +125,7 @@ train.plot()
 ```
 
 :::info
-Nota que la grafica ahora esta excluyendo el año 1972 que corresponde al ultimo año registrado en el conjunto de datos.
+Nota que la gráfica ahora está excluyendo el año 1972 que corresponde al último año registrado en el conjunto de datos.
 :::
 
 ### Conjunto de datos para el Entrenamiento
@@ -146,16 +146,16 @@ La sección color naranja es excluida del dataset de entrenamiento para verifica
 
 ## Entrenamiento del modelo ARIMA
 
-El primer paso para entrenar nuestro modelo de predicciones es importar la libreria `pmdarima`.
+El primer paso para entrenar nuestro modelo de predicciones es importar la librería `pmdarima`.
 
 ```py
 from pmdarima.arima import auto_arima
 ```
 
-La libreria pmdarima trae consigo la función que te permitira configurar los parametros que necesitara el metodo `auto_arima` para entrenar el modelo. Conoce todos los dellates sobre de cada uno de los parametros visitando la [documentación oficial de Pmdarima](https://alkaline-ml.com/pmdarima/modules/generated/pmdarima.arima.ARIMA.html).
+La librería pmdarima trae consigo la función que te permitirá configurar los parámetros que necesitará el método `auto_arima` para entrenar el modelo. Conoce todos los detalles sobre de cada uno de los parámetros visitando la [documentación oficial de Pmdarima](https://alkaline-ml.com/pmdarima/modules/generated/pmdarima.arima.ARIMA.html).
 
 
-Al ejecutar el siguiente codigo realizara una búsqueda por pasos para minimizar el aic.
+Al ejecutar el siguiente código realizara una búsqueda por pasos para minimizar el aic.
 
 :::info
 ### AIC (Akaike information criteria)
@@ -173,7 +173,7 @@ modelo = auto_arima(train, start_p=0, start_q=0, max_p=10, max_d=10,
                     suppress_warnings=True, error_action='trace', trace=True,n_fits=50)
 ```
 
-El metodo comenzara a ajustar los datos automaticamente para entregar el mejor resultado. 
+El método comenzara a ajustar los datos automáticamente para entregar el mejor resultado.
 
 ```bash title="Output"
 Performing stepwise search to minimize aic
@@ -202,7 +202,7 @@ Total fit time: 20.395 seconds
 ```
 
 :::tip
-Correctamente `auto_rima` encuentra el mejor modelo para predecir de acuerdo a nuestro conjunto de datos. 
+Correctamente `auto_rima` encuentra el mejor modelo para predecir de acuerdo con nuestro conjunto de datos. 
 ```
 Best model:  ARIMA(1,1,2)(0,1,0)[12]          
 Total fit time: 20.395 seconds
@@ -242,7 +242,7 @@ p.head(4)
     </tr>
 </table>
 
-A continuacion, volvemos a graficar el conjunto de datos para comparar los resultados predichos por el modelo con los datos historicos.
+A continuación, volvemos a graficar el conjunto de datos para comparar los resultados predichos por el modelo con los datos históricos.
 
 ```py
 plt.figure()
@@ -254,11 +254,11 @@ plt.show()
 ```
 !["Grafica comparativa entre datos historicos y la predicción del modelo arima"](./img/grafica-datos-prediccion.png)
 
-La grafica provee información valiosa que nos permite determinar si el modelo funciona correctamente. Hay que tener encuenta que los datos de prueba no hicieron del entrenamiento, por lo que son desconocidos por parte del entrenamiento. De este modo, se observa que los resultados de la predicción se asemejan al comportamiento de los datos de prueba, pues reflejan un aumento en las ventas de Champaña del mes de diciembre del año predicho. 
+La grafica provee información valiosa que nos permite determinar si el modelo funciona correctamente. Hay que tener en cuenta que los datos de prueba no hicieron del entrenamiento, por lo que son desconocidos por parte del entrenamiento. De este modo, se observa que los resultados de la predicción se asemejan al comportamiento de los datos de prueba, pues reflejan un aumento en las ventas de Champaña del mes de diciembre del año predicho. 
 
 :::caution
 
-Ten encuenta que en las series temporales, entre menor sea el numero de periodos, mas efectiva será la predicción. Observe el resultado de la predicción cuando se hace uso de un número de periodos muy alto en el metodo `predict()` del modelo arima.
+Ten en cuenta que en las series temporales, entre menor sea el número de periodos, más efectiva será la predicción. Observe el resultado de la predicción cuando se hace uso de un número de periodos muy alto en el método `predict()` del modelo arima.
 
 ```py
 pd.DataFrame(modelo.predict(n_periods=280)).plot()
