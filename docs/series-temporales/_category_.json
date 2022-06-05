@@ -1,6 +1,6 @@
 {
 	"label": "Series Temporales",
-	"position": 3,
+	"position": 2,
 	"link": {
 		"type": "generated-index",
 		"description": "Teoria y practica de modelos para la prediccion de variables aplicado a Series Temporales."

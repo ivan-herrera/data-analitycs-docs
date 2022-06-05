@@ -1,0 +1,8 @@
+{
+	"label": "Documentos Bibliograficos",
+	"position": 3,
+	"link": {
+		"type": "generated-index",
+		"description": "Material bibliografico sobre IoT y Algoritmos de Machine Learning aplicados a la monitorización de Acuiferos"
+	}
+}

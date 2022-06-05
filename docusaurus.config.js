@@ -67,7 +67,7 @@ const config = {
             type: 'doc',
             docId: 'intro',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Documentación',
           },
           {to: '/blog', label: 'Blog', position: 'left'},
           {
@@ -124,7 +124,7 @@ const config = {
       },
       prism: {
         theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
+        darkTheme: darkCodeTheme
       },
     }),
 };

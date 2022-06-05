@@ -206,7 +206,7 @@ error_mse = mean_squared_error(
 
 print(f"Error de test (mse): {error_mse}")
 ```
-Como se observa a continuación, el resultado de la métrica `mse` no muy alto, sin embargo, se puede lograr un error mucho mas bajo, lo cual garantizaria un nivel de confianza mucho mayor a las predicciones.
+Como se observa a continuación, el resultado de la métrica `mse` no es muy alto, sin embargo, se puede lograr un error mucho mas bajo, lo cual garantizaria un nivel de confianza mucho mayor a las predicciones.
 ```bash title="Error Mean Squared Errror"
 Error de test (mse): 0.07326833976120374
 ```
