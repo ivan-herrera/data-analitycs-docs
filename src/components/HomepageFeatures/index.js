@@ -4,32 +4,29 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
+    title: 'La industria agrícola se está beneficiando de los científicos de datos',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        La ciencia de los datos está cambiando la forma en que los agricultores y los profesionales de la agricultura han estado tomando decisiones <a href='https://towardsdatascience.com/6-ways-the-agricultural-industry-is-benefiting-from-data-scientists-b778d83f61db' target="_blank">(Matthews, 2019)</a>.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: 'Qué es el Internet de las cosas?',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        La tecnología moderna ha permitido recopilar datos del suelo, el agua y los minerales de las explotaciones agrícolas, y almacenarlos en un sistema centralizado, conocido popularmente como Internet de las Cosas (IoT). IoT se refiere a la idea de conectar a Internet dispositivos interrelacionados para que puedan compartir e intercambiar datos de forma independiente (Clark, 2016). 
       </>
     ),
   },
   {
-    title: 'Powered by React',
+    title: 'Agricultura digital e impulsada por los datos',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        La analítica de datos puede utilizarse en el volumen acumulado para obtener información que los agricultores pueden utilizar para optimizar su agricultura. Así, los agricultores pueden tomar decisiones agrícolas inteligentes utilizando esa información a lo largo del ciclo de producción; desde la planificación, la plantación, la cosecha, hasta su comercialización (Maru, 2018).
       </>
     ),
   },

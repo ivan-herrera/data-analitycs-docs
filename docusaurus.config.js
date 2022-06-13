@@ -6,8 +6,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Data Sciences',
-  tagline: 'Algorithms, strategies, and applications',
+  title: 'Investigación sobre Ciencia de Datos',
+  tagline: 'Teoría, algoritmos, estrategias y apliaciones',
   url: 'https://machine-learning-ivan-herrera.netlify.app',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -16,8 +16,8 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'Practicas CECAR', // Usually your GitHub org/user name.
+  projectName: 'data-analitycs-docs', // Usually your repo name.
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
@@ -57,10 +57,10 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'Data Sciences Docs',
+        title: 'Investigación CECAR',
         logo: {
-          alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          alt: 'Logo de CECAR',
+          src: 'img/favicon-96x96.png',
         },
         items: [
           {
@@ -115,12 +115,12 @@ const config = {
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://github.com/ivan-herrera/data-analitycs-docs',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Investigación sobre Ciencia de Datos. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,
