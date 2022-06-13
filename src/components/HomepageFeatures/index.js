@@ -5,7 +5,7 @@ import styles from './styles.module.css';
 const FeatureList = [
   {
     title: 'La industria agrícola se está beneficiando de los científicos de datos',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    Svg: require('@site/static/img/Data report-amico.svg').default,
     description: (
       <>
         La ciencia de los datos está cambiando la forma en que los agricultores y los profesionales de la agricultura han estado tomando decisiones 
@@ -15,7 +15,7 @@ const FeatureList = [
   },
   {
     title: 'Qué es el Internet de las cosas?',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    Svg: require('@site/static/img/Data report-bro.svg').default,
     description: (
       <>
         La tecnología moderna ha permitido recopilar datos del suelo, el agua y los minerales de las explotaciones agrícolas, y almacenarlos en un sistema centralizado, conocido popularmente como Internet de las Cosas (IoT). IoT se refiere a la idea de conectar a Internet dispositivos interrelacionados para que puedan compartir e intercambiar datos de forma independiente 
@@ -25,7 +25,7 @@ const FeatureList = [
   },
   {
     title: 'Agricultura digital e impulsada por los datos',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    Svg: require('@site/static/img/Analytics-bro.svg').default,
     description: (
       <>
         La analítica de datos puede utilizarse en el volumen acumulado para obtener información que los agricultores pueden utilizar para optimizar su agricultura. Así, los agricultores pueden tomar decisiones agrícolas inteligentes utilizando esa información a lo largo del ciclo de producción; desde la planificación, la plantación, la cosecha, hasta su comercialización 
